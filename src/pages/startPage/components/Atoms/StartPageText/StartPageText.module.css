@@ -1,0 +1,15 @@
+.StartPageText {
+  font-size: 0.875rem;
+  font-weight: var(--font-regular);
+  color: var(--primaryColor);
+
+  margin: 0;
+
+  cursor: default;
+}
+
+@media screen and (min-width: 768px) {
+  .StartPageText {
+    font-size: 1.125rem;
+  }
+}

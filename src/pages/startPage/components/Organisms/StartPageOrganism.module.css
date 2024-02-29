@@ -1,0 +1,21 @@
+.StartPageOrganism {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+  
+  width: 300px;
+}
+
+@media screen and (min-width: 768px) {
+  .StartPageOrganism {
+    width: 490px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .StartPageOrganism {
+    width: 500px;
+  }
+}
