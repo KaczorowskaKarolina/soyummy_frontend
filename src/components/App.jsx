@@ -1,3 +1,7 @@
+import { Routes, Route } from 'react-router-dom';
+
+import { StartPage } from '../pages/startPage/StartPage.jsx';
+
 export const App = () => {
   return (
     <div
@@ -9,7 +13,11 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      React homework template
+      <Routes>
+        <Route path="/soyummy_frontend" element={<StartPage />} />
+        <Route path="/signin" />
+        <Route path="/registration" />
+      </Routes>
     </div>
   );
 };
