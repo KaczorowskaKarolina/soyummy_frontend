@@ -2,17 +2,12 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import axios from 'axios';
 
-const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
-const SERVER_PORT = process.env.SERVER_PORT;
-const MAIN_ENDPOINT = process.env.MAIN_ENDPOINT;
-
-const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
-const SERVER_PORT = process.env.SERVER_PORT;
-const MAIN_ENDPOINT = process.env.MAIN_ENDPOINT;
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL; // http://localhost:3001/ap/
+const SERVER_PORT = process.env.SERVER_PORT; // 3001
+const MAIN_ENDPOINT = process.env.MAIN_ENDPOINT; // api/
 
 axios.defaults.baseURL =
   REACT_APP_API_URL || `http://localhost:${SERVER_PORT}${MAIN_ENDPOINT}`;
-REACT_APP_API_URL || `http://localhost:${SERVER_PORT}${MAIN_ENDPOINT}`;
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -26,8 +21,8 @@ const register = createAsyncThunk(
   'auth/register',
   async (credentails, thunkAPI) => {
     try {
-      const response = await axios.post('users/signup', credentails);
-      setAuthHeader(response.data.token);
+      const response = await axios.post('user/', credentails);
+      setAuthHeader(response.data.confirmToken);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
