@@ -5,16 +5,20 @@ import css from './RegistrationForm.module.css';
 
 const RegistrationForm = () => {
   return (
-    <div className={css.RegistrationForm}>
+    <form
+      // action=""
+      method="post"
+      className={css.RegistrationForm}
+    >
       <div className={css.RegistrationModal}>
         <h2 className={css.RegistrationTitle}>Registration</h2>
         <RegistrationInputs />
         <div className={css.RegistrationButton}>
-          <RectangleButton title="Sign Up" size="large" />
+          <RectangleButton title="Sign Up" size="large" type="submit" />
         </div>
       </div>
       <RegistrationLink />
-    </div>
+    </form>
   );
 };
 
