@@ -32,7 +32,7 @@ const register = createAsyncThunk(
 
 const login = createAsyncThunk('auth/login', async (credentails, thunkAPI) => {
   try {
-    const response = await axios.post('users/login', credentails);
+    const response = await axios.post('user/login', credentails);
     setAuthHeader(response.data.refreshToken);
     return response.data;
   } catch (error) {
@@ -42,7 +42,7 @@ const login = createAsyncThunk('auth/login', async (credentails, thunkAPI) => {
 
 const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
-    await axios.post('users/logout');
+    await axios.post('user/logout');
     clearAuthHeader();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
@@ -59,8 +59,17 @@ const refresh = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
 
   try {
     setAuthHeader(persistedToken);
-    const response = await axios.post('users/current');
+    const response = await axios.get('user/');
     return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});
+
+const deleteUser = createAsyncThunk('auth/delete', async (_, thunkAPI) => {
+  try {
+    await axios.delete('user/');
+    clearAuthHeader();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
@@ -83,4 +92,4 @@ const updateUser = createAsyncThunk(
   }
 );
 
-export { register, login, logout, refresh, updateUser };
+export { deleteUser, register, login, logout, refresh, updateUser };
