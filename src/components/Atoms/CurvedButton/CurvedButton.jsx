@@ -5,7 +5,9 @@ const CurvedButton = ({
   type = 'button',
   greenOrBlack,
   recipesOrFavorites,
-  onClick = () => {},
+  onClick = () => {
+    alert('Please fill on click handler');
+  },
 }) => {
   const classes = `${styles.CurvedButton} ${styles[`${greenOrBlack}`]} ${
     styles[recipesOrFavorites]
