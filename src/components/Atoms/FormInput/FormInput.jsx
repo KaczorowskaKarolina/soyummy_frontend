@@ -38,10 +38,8 @@ const FormInput = ({
   }
 
   return (
-    <div className={inputStyles}>
-      <div>
-        {icon}
-      </div>
+    <label className={inputStyles} name={inputName}>
+      <div>{icon}</div>
       <input
         type={type}
         name={inputName}
@@ -50,10 +48,8 @@ const FormInput = ({
         required
         className={textStyles}
       />
-      <div>
-        {editIcon && <EditIcon className={iconStyles}/>}
-      </div>
-    </div>
+      <div>{editIcon && <EditIcon className={iconStyles} />}</div>
+    </label>
   );
 };
 
