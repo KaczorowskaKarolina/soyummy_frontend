@@ -1,0 +1,11 @@
+.RegistrationInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .RegistrationInputs {
+    gap: 24px;
+  }
+}
