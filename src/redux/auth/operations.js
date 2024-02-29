@@ -33,7 +33,7 @@ const register = createAsyncThunk(
 const login = createAsyncThunk('auth/login', async (credentails, thunkAPI) => {
   try {
     const response = await axios.post('users/login', credentails);
-    setAuthHeader(response.data.token);
+    setAuthHeader(response.data.refreshToken);
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
