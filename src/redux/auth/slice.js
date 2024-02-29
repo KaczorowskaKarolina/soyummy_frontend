@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { updateUser, logout, refresh } from './operations.js';
+import { updateUser, logout, refresh, deleteUser } from './operations.js';
 
 const initialState = {
   user: { name: null, email: null },
@@ -24,7 +24,8 @@ const isLoginOrSignupAction = action => {
 
 const handleLogin = (state, action) => {
   state.user = action.payload.user;
-  state.token = action.payload.token;
+  action.payload.refreshToken && (state.token = action.payload.refreshToken);
+  action.payload.confirmToken && (state.token = action.payload.confirmToken);
   state.isLoggedIn = true;
   state.isRefreshing = false;
   state.error = false;
@@ -56,14 +57,16 @@ const authSlice = createSlice({
         state.error = false;
       })
       .addCase(refresh.fulfilled, (state, action) => {
-        state.user = action.payload;
+        state.user = action.payload.user;
         state.isLoggedIn = true;
         state.isRefreshing = false;
         state.error = false;
       })
+      .addCase(deleteUser.fulfilled, handleRejected)
       .addCase(updateUser.fulfilled, (state, action) => {
-        action.name ? (state.user.name = action.name) : null;
-        action.avatarUrl ? (state.user.name = action.avatarUrl) : null;
+        action.payload.name && (state.user.name = action.payload.name);
+        action.payload.avatarUrl &&
+          (state.user.name = action.payload.avatarUrl);
         state.isLoggedIn = true;
         state.isRefreshing = false;
         state.error = false;
