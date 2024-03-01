@@ -15,8 +15,8 @@ export const App = () => {
     >
       <Routes>
         <Route path="/soyummy_frontend" element={<StartPage />} />
-        <Route path="/signin" />
-        <Route path="/registration" />
+        {/* <Route path="/signin" />
+        <Route path="/registration" /> */}
       </Routes>
     </div>
   );
