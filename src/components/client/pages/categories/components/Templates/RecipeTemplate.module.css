@@ -1,0 +1,16 @@
+.RecipeTemplate {
+  padding-inline-start: 0;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  justify-content: space-around;
+  height: max-content;
+  @media screen and (min-width: 30em) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  @media screen and (min-width: 48em) {
+    gap: 0.8rem;
+  }
+}

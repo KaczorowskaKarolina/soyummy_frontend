@@ -1,0 +1,49 @@
+.categoryMolecule {
+  height: 3.5em;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+
+  a {
+    font-size: 0.87em;
+    color: var(--popularDescriptionText);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.45s;
+  }
+
+  a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.1em;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transform-origin: bottom right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover a::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+  }
+
+  &:hover a {
+    color: var(--accent);
+  }
+
+  &.active a::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+  }
+
+  &.active a {
+    color: var(--accent);
+  }
+
+  &:not(:last-child) {
+    margin-right: 1.8em;
+  }
+}
