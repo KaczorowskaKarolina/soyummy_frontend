@@ -8,6 +8,7 @@
   cursor: pointer;
   width: 12rem;
   height: 2.8rem;
+  margin: 0 auto;
   @media screen and (min-width: 30rem) {
     width: 15rem;
     height: 3.8rem;

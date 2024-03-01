@@ -10,8 +10,8 @@ import css from './HomeOrganism.module.css';
 import categoryPageCss from '../../categories/components/Templates/RecipeTemplate.module.css';
 
 const HomeOrganism = ({ recipesByCategory }) => {
-  console.log(recipesByCategory.map(recipe => recipe));
   const countOfElement = CheckMediaQuery();
+  console.log(countOfElement);
 
   return recipesByCategory.map(recipeByCategory => (
     <ul className={css.HomeOrganism} key={nanoid()}>
@@ -33,17 +33,17 @@ const HomeOrganism = ({ recipesByCategory }) => {
           return null;
         })}
       </ul>
-      <HomeAtomLinkButton title={recipeByCategory.title}>
-        <HomeAtomButton text="See all" />
+      <HomeAtomLinkButton text={recipeByCategory.title}>
+        <HomeAtomButton text={'See all'} />
       </HomeAtomLinkButton>
     </ul>
   ));
 };
 
 function CheckMediaQuery() {
-  const matchesMobile = useMediaQuery('(min-width:20rem)');
-  const matchesTablet = useMediaQuery('(min-width:30rem)');
-  const matchesDesktop = useMediaQuery('(min-width:48rem)');
+  const matchesMobile = useMediaQuery('(min-width:20em)');
+  const matchesTablet = useMediaQuery('(min-width:30em)');
+  const matchesDesktop = useMediaQuery('(min-width:48em)');
 
   if (matchesDesktop) {
     return 4;

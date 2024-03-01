@@ -14,7 +14,7 @@ const HomeTemplate = ({ recipesByCategory }) => {
     <div className={css.HomeTemplate}>
       <HomeOrganism recipesByCategory={recipesByCategory} />
       <HomeAtomButtonLoadMore
-        title="Other categories"
+        text="Other categories"
         onClick={handleLoadMore}
       />
     </div>

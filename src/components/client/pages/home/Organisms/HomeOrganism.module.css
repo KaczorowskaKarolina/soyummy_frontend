@@ -2,6 +2,7 @@
   padding-inline-start: 0;
   display: flex;
   flex-direction: column;
+  margin: 0;
   a:last-of-type {
     margin-left: auto;
   }

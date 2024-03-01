@@ -1,5 +1,11 @@
 .HomeTemplate {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  gap: 2rem;
+  @media screen and (min-width: 30rem) {
+    gap: 3.1rem;
+  }
+  @media screen and (min-width: 48rem) {
+    gap: 6.2rem;
+  }
 }

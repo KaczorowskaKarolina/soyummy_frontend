@@ -91,7 +91,6 @@ const HomePage = () => {
     });
 
     setRecipesListByCategory(recipesByCategory);
-    console.log(recipesListByCategory);
   }, []);
 
   return <HomeTemplate recipesByCategory={recipesListByCategory} />;
