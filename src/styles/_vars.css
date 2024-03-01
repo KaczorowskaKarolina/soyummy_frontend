@@ -1,0 +1,85 @@
+:root {
+  /* font */
+  --font-family: 'Poppins', sans-serif;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-mediumBold: 600;
+  --font-bold: 700;
+
+  --accent: #8baa36;
+  --primaryColor: #ffffff;
+  --secondaryColor: #000000;
+
+  /* input state */
+  --correct: #3cbc81;
+  --incorrect: #e74a3b;
+  --warning: #f6c23e;
+
+  /* text */
+  --signInUpText: #fafafa;
+  --navText: #23262a;
+  --navTextDark: #fafafa;
+  --userEdit: #23262a;
+  --userEditDark: #fafafa;
+  --placeholderText: #bdbdbd;
+  --catNavText: #bdbdbd;
+  --catNavTextDark: #fafafa;
+  --addRecipeText: #000000;
+  --addRecipeTextDark: #fafafa;
+  --descriptionText: #23262a;
+  --descriptionTextDark: #fafafa;
+  --popularDescriptionText: #7e7e7e;
+  --footerText: #fafafa;
+  --shoppingListBorder: #e0e0e0;
+
+  --font-family: 'Poppins', sans-serif;
+
+  /* buttons */
+  --activeBtn: #8baa36;
+  --inactiveBtn: #d9d9d9;
+  --activeBtnText: #fafafa;
+  --inactiveBtnText: #23262a;
+  --addBtn: #22252a;
+  --paginationArrow: #a9a9a9ba;
+
+  /* titles */
+  --mainTitle: #22252a;
+  --mainTitleDark: #fafafa;
+  --categorieTitle: #001833;
+  --categorieTitleDark: #fafafa;
+  --recipeTitle: #3e4462;
+  --recipeTitleDark: #fafafa;
+  --addStepTitle: #3e4462;
+  --addStepTitleDark: #fafafa;
+
+  /* backgrounds */
+  --mainBg: #ffffff;
+  --mainBgDark: #1e1f28;
+  --footerBg: #22252a;
+  --footerBgDark: #8baa36;
+  --elementBg: #ebf3d4;
+  --chooseOptionBg: #d9d9d9;
+  --chooseOptionBgDark: #8baa36;
+  --paginationBg: #fafafa;
+  --paginationBgDark: #2a2c36;
+  --favoritesBg: #ffffff;
+  --favoritesBgDark: #2a2c36;
+  --addInputBg: #d9d9d9;
+  --addInputBgDark: transparent;
+  --sortByBg: #d9d9d9;
+
+  /* icons */
+  --hoverIcon: #8baa36;
+  --closeIcon: #333333;
+  --closeIconDark: #fafafa;
+  --searchIcon: #22252a;
+  --searchIconDark: #fafafa;
+  --delIconBg: #ebf3d4;
+  --delIconBgDark: #1e1f28;
+  --delIconFillDark: #fafafa;
+  --socialsIcon: #8baa36;
+  --logoIconBgFt: #8baa36;
+  --logoIconFillFt: #ebf3d4;
+  --logoIconBgFt: #ebf3d4;
+  --logoIconFillFt: #8baa36;
+}
