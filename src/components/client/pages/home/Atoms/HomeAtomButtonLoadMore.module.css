@@ -1,0 +1,20 @@
+.HomeAtomButtonLoadMore {
+  padding: 12px 24px;
+  color: var(--secondaryColor);
+  border-radius: 24px 44px;
+  border: 1px solid var(--accent);
+  background-color: transparent;
+  transition: ease-in-out 0.25s;
+  cursor: pointer;
+  width: 12rem;
+  height: 2.8rem;
+  @media screen and (min-width: 30rem) {
+    width: 15rem;
+    height: 3.8rem;
+  }
+}
+
+.HomeAtomButtonLoadMore:hover {
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
+}
