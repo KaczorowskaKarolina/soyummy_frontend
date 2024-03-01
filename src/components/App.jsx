@@ -16,6 +16,7 @@ const App = () => {
       <HomePage />
       {/* <Routes>
         <Route path="/soyummy_frontend" element={<StartPage />} />
+<<<<<<< Updated upstream
         <Route path="/registration" element={<Registration />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/" element={<SharedLayout />}>
@@ -33,6 +34,11 @@ const App = () => {
           <Route path="*" element={<Page404 />} />
         </Route>
       </Routes> */}
+=======
+        <Route path="/signin" />
+        <Route path="/registration" />
+      </Routes>
+>>>>>>> Stashed changes
     </div>
   );
 };
