@@ -1,0 +1,54 @@
+.SignInForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+
+  z-index: 2;
+}
+
+.SignInModal {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  
+  padding: 32px 28px;
+  margin: 0 20px;
+  
+  background-color: var(--favoritesBgDark);
+  border-radius: 30px;
+  
+  z-index: 2;
+}
+
+.SignInTitle {
+  font-size: 1.5rem;
+  font-weight: var(--font-mediumBold);
+  
+  margin: 0 0 12px 0;
+  
+  color: var(--mainTitleDark);
+}
+
+.SignInButton {
+  width: 279px;
+  height: 45px;
+}
+
+@media screen and (min-width: 768px) {
+  .SignInModal {
+    padding: 44px 50px;
+    margin: 0 20px;
+    gap: 50px;
+  }
+
+  .SignInTitle {
+    font-size: 1.75rem;
+    margin: 0;
+  }
+
+  .SignInButton {
+    width: 400px;
+    height: 59px;
+  }
+}
