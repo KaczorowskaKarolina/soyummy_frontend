@@ -1,0 +1,11 @@
+.SignInInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .SignInInputs {
+    gap: 24px;
+  }
+}

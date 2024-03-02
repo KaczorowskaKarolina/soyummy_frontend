@@ -1,0 +1,93 @@
+.CurvedButton {
+  padding: 12px 24px;
+
+  border-radius: 24px 44px;
+  border: 1px solid var(--primaryColor);
+  background-color: transparent;
+  color: var(--primaryColor);
+
+  transition: ease-in-out 0.25s;
+
+  cursor: pointer;
+}
+
+.CurvedButton:hover {
+  border-color: var(--accent);
+  background-color: var(--primaryColor);
+  color: var(--accent);
+}
+
+.green {
+  border: none;
+  background-color: var(--accent);
+  color: var(--primaryColor);
+}
+
+.green:hover {
+  background-color: var(--primaryColor);
+}
+
+.black {
+  border: none;
+  background-color: var(--addBtn);
+  color: var(--primaryColor);
+}
+
+.black:hover {
+  border: none;
+  background-color: var(--accent);
+  color: var(--primaryColor);
+}
+
+@media screen and (min-width: 768px) {
+  .CurvedButton {
+    padding: 22px 44px;
+  }
+}
+
+.recipes {
+  padding: 6px 14px;
+  font-size: 0.6rem;
+}
+
+.recipes:hover {
+  background-color: var(--addBtn);
+  color: var(--primaryColor);
+}
+
+.favorites {
+  background-color: var(--addBtn);
+  padding: 6px 14px;
+  font-size: 0.6rem;
+}
+
+.favorites:hover {
+  background-color: var(--accent);
+  color: var(--primaryColor);
+}
+
+.recipeBanner {
+  border-color: var(--accent);
+  color: var(--inactiveBtnText);
+}
+
+.recipeBanner:hover {
+  background-color: var(--accent);
+  color: var(--activeBtnText);
+}
+
+@media screen and (min-width: 768px) {
+  .recipes,
+  .favorites {
+    padding: 12px 32px;
+    font-size: 0.875rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .recipes,
+  .favorites {
+    padding: 18px 44px;
+    font-size: 1rem;
+  }
+}

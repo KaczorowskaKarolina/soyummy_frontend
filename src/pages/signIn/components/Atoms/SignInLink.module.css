@@ -1,0 +1,9 @@
+.SignInLink {
+  font-size: 0.875rem;
+  font-weight: var(--font-regular);
+
+  text-decoration: underline;
+  color: var(--signInUpText);
+  
+  cursor: pointer;
+}
