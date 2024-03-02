@@ -4,7 +4,7 @@ import { StartPage } from '../pages/startPage/StartPage.jsx';
 import { SignIn } from '../pages/signIn/SignIn.jsx';
 import { Registration } from '../pages/registration/Registration.jsx';
 
-export const App = () => {
+const App = () => {
   return (
     <div
       style={{
