@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className={css.navigation}>
       <ul className={css.list}>
         {links.map((link, index) => (
-          <li key={index} className={css.item}>
+          <li key={index}>
             <NavigationLink
               path={link.path}
               title={link.title}
