@@ -31,8 +31,10 @@ const Navigation = ({ closeMenu }) => {
         </button>
       </div>
       <Navbar />
-      <div className={css.switch}>
-        <Switch />
+      <div className={css.switchBox}>
+        <div className={css.switchButton}>
+          <Switch />
+        </div>
       </div>
     </div>
   );
