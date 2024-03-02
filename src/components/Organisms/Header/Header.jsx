@@ -8,32 +8,39 @@ import { Navbar } from 'components/Molecules/Navbar/Navbar.jsx';
 
 import { Link } from 'react-router-dom';
 import { UserLogo } from 'components/Molecules/UserLogo/UserLogo.jsx';
+import { useState } from 'react';
+import { Navigation } from '../Navigation/Navigation';
 
 const Header = ({ openMenu }) => {
+  const [nav, setNav] = useState(false);
   let width = window.innerWidth;
 
   return (
-    <div className={css.container}>
-      <div className={css.box}>
-        <Link to="/" className={css.logo}>
-          <HeaderLogo />
-        </Link>
-        {width < 1240 ? null : <Navbar />}
-        <div className={css.rightContainer}>
-          <div className={css.userMenu}>
+    <>
+      <div className={css.container}>
+        <div className={css.box}>
+          <Link to="/" className={css.logo}>
+            <HeaderLogo />
+          </Link>
+          {width < 1240 ? null : <Navbar />}
+          <div className={css.rightContainer}>
             <UserLogo />
-            {/* <div className={css.avatar}>
-              <ProfilePhoto />
+            <div
+              onClick={() => {
+                setNav(true);
+              }}
+              className={css.burgerMenu}
+            >
+              <BurgerMenu openMenu={openMenu} />
             </div>
-            <p className={css.name}>Name</p> */}
-          </div>
-          <BurgerMenu openMenu={openMenu} />
-          <div className={css.switch}>
-            <Switch />
+            <div className={css.switch}>
+              <Switch />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      {nav ? <Navigation closeMenu={setNav} /> : null}
+    </>
   );
 };
 
