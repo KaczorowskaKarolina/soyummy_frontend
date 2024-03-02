@@ -8,9 +8,6 @@ import css from './CategoryMolecule.module.css';
 const CategoryMolecule = ({ title }) => {
   const { categoryName } = useParams();
   const [isActiveButton, setIsActiveButton] = useState(false);
-  // const handleClick = () => {
-  //   setIsActiveButton(true);
-  // };
   useEffect(() => {
     if (categoryName === title) {
       console.log('here we are');
@@ -20,11 +17,7 @@ const CategoryMolecule = ({ title }) => {
 
   return (
     <li className={css.categoryMolecule} key={title}>
-      <CategoryAtom
-        title={title}
-        // onClick={handleClick}
-        isActive={isActiveButton}
-      />
+      <CategoryAtom title={title} isActive={isActiveButton} />
     </li>
   );
 };

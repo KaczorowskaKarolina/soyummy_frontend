@@ -1,5 +1,6 @@
 import { RecipeImageAtom } from '../../Atoms/recipeAtoms/RecipeImageAtom';
 import { RecipeTitleAtom } from '../../Atoms/recipeAtoms/RecipeTitleAtom';
+
 import css from './RecipeOrganism.module.css';
 
 const RecipeOrganism = ({ imageSource, title, id }) => {

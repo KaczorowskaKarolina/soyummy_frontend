@@ -1,6 +1,7 @@
-import css from './CategoryOrganism.module.css';
 import { CategoriesText } from '../../Atoms/categoryAtoms/CategoriesText';
 import { CategoryMolecule } from '../../Molecules/categoryMolecules/CategoryMolecule';
+
+import css from './CategoryOrganism.module.css';
 
 const CategoryOrganism = ({ titles }) => {
   return (

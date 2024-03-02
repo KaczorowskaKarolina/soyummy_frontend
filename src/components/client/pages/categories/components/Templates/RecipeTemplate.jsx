@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import { RecipeOrganism } from '../Organisms/recipeOrganisms/RecipeOrganism';
+
 import css from './RecipeTemplate.module.css';
 
 const RecipeTemplate = ({ recipes }) => {
