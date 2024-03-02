@@ -1,7 +1,7 @@
 .HomeAtomButtonLoadMore {
-  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
   color: var(--secondaryColor);
-  border-radius: 24px 44px;
+  border-radius: 1.5rem 2.75rem;
   border: 1px solid var(--accent);
   background-color: transparent;
   transition: ease-in-out 0.25s;
@@ -9,6 +9,7 @@
   width: 12rem;
   height: 2.8rem;
   margin: 0 auto;
+
   @media screen and (min-width: 30rem) {
     width: 15rem;
     height: 3.8rem;
