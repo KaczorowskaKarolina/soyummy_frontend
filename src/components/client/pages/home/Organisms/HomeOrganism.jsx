@@ -11,7 +11,6 @@ import categoryPageCss from '../../categories/components/Templates/RecipeTemplat
 
 const HomeOrganism = ({ recipesByCategory }) => {
   const countOfElement = CheckMediaQuery();
-  console.log(countOfElement);
 
   return recipesByCategory.map(recipeByCategory => (
     <ul className={css.HomeOrganism} key={nanoid()}>
@@ -33,7 +32,7 @@ const HomeOrganism = ({ recipesByCategory }) => {
           return null;
         })}
       </ul>
-      <HomeAtomLinkButton text={recipeByCategory.title}>
+      <HomeAtomLinkButton title={recipeByCategory.title}>
         <HomeAtomButton text={'See all'} />
       </HomeAtomLinkButton>
     </ul>
