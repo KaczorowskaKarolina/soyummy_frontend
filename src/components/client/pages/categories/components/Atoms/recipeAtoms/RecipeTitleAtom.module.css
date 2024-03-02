@@ -1,17 +1,18 @@
 .RecipeTitleAtom {
   font-size: 1rem;
+  font-weight: var(--font-medium);
   background-color: var(--primaryColor);
   letter-spacing: -0.01rem;
-
-  padding: 1rem;
+  padding-left: 1rem;
   position: absolute;
   bottom: 1.6rem;
   height: 3.2rem;
   border-radius: 0.5rem;
   width: 83%;
-  font-weight: var(--font-medium);
+  max-width: 16.25rem;
   display: flex;
   align-items: center;
+  margin: 0;
   @media screen and (min-width: 48em) {
     bottom: 1.5rem;
   }

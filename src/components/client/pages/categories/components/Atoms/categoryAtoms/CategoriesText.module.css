@@ -1,8 +1,11 @@
 .CategoriesText {
   text-decoration: none;
-  font-family: var(--categorieTitle);
+  font-family: var(--font-family);
   font-size: 1.75rem;
   @media screen and (min-width: 30em) {
     font-size: 2rem;
+  }
+  @media screen and (min-width: 48em) {
+    font-size: 2.75rem;
   }
 }
