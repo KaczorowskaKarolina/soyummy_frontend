@@ -1,4 +1,7 @@
-import { Routes, Route } from 'react-router-dom';
+import {
+  Routes,
+  //  Route
+} from 'react-router-dom';
 /* import your page component here and uncomment appropriate route below */
 
 const App = () => {
@@ -13,23 +16,23 @@ const App = () => {
       }}
     >
       <Routes>
-        {/* <Route path="/soyummy_frontend" element={<StartPage />} />
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<MainPage />} />
-          <Route
+        {/* <Route path="/soyummy_frontend" element={<StartPage />} /> */}
+        {/* <Route path="/registration" element={<Registration />} /> */}
+        {/* <Route path="/signin" element={<SignIn />} /> */}
+        {/* <Route path="/" element={<SharedLayout />}> */}
+        {/* <Route index element={<MainPage />} /> */}
+        {/* <Route
             path="/categories/:categoryName"
             element={<CategoriesPage />}
-          />
-          <Route path="/add" element={<AddRecipesPage />} />
-          <Route path="/my" element={<MyRecipesPage />} />
-          <Route path="/favorite" element={<FavoritePage />} />
-          <Route path="/shopping-list" element={<ShoppingListPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/recipe/:recipeId" element={<RecipePage />} />
-          <Route path="*" element={<Page404 />} />
-        </Route> */}
+          /> */}
+        {/* <Route path="/add" element={<AddRecipesPage />} /> */}
+        {/* <Route path="/my" element={<MyRecipesPage />} /> */}
+        {/* <Route path="/favorite" element={<FavoritePage />} /> */}
+        {/* <Route path="/shopping-list" element={<ShoppingListPage />} /> */}
+        {/* <Route path="/search" element={<SearchPage />} /> */}
+        {/* <Route path="/recipe/:recipeId" element={<RecipePage />} /> */}
+        {/* <Route path="*" element={<Page404 />} /> */}
+        {/* </Route> */}
       </Routes>
     </div>
   );
