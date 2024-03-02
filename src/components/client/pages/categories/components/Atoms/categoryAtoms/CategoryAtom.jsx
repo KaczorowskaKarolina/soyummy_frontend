@@ -1,8 +1,7 @@
 import css from './CategoryAtom.module.css';
 
 const CategoryAtom = ({ title, _, isActive }) => {
-  const categoryAddress = `http://localhost:5000/categories/${title}`;
-  console.log(isActive);
+  const categoryAddress = `http://localhost:3000/categories/${title}`;
   return (
     <a
       className={isActive ? css.CategoryNameAtomActive : css.CategoryNameAtom}

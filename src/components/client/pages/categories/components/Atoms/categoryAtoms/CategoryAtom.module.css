@@ -4,7 +4,6 @@
   text-decoration: none;
   color: var(--secondaryColor);
   margin-bottom: 2rem;
-  font-weight: var(--font-mediumBold);
   @media screen and (min-width: 30em) {
     font-size: 2.5rem;
     margin-bottom: 2.5rem;
@@ -12,8 +11,26 @@
   @media screen and (min-width: 48em) {
     margin-bottom: 3.1rem;
   }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 600%;
+    height: 0.05em;
+    bottom: -34px;
+    left: 0;
+    background-color: var(--catNavText);
+  }
 }
 
 .CategoryNameAtomActive {
-  background-color: red;
+  font-family: var(--font-family);
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.2rem;
+    bottom: -35px;
+    left: 0;
+    background-color: var(--accent);
+  }
 }
