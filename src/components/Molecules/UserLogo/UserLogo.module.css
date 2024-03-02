@@ -1,0 +1,19 @@
+.userMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.userName {
+  font-weight: var(--font-mediumBold);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--mainTitle);
+}
+
+@media screen and (min-width: 768px) {
+  .userName {
+    font-size: 14px;
+  }
+}
