@@ -1,0 +1,20 @@
+.headerPhoto,
+.headerPlaceholder {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+/* .headerPlaceholder {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+} */
+
+@media screen and (min-width: 768px) {
+  .headerPhoto,
+  .headerPlaceholder {
+    width: 44px;
+    height: 44px;
+  }
+}
