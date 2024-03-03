@@ -23,5 +23,6 @@
   .list {
     flex-direction: row;
     gap: 30px;
+    margin: 0;
   }
 }
