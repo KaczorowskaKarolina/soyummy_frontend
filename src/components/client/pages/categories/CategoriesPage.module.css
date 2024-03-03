@@ -1,5 +1,10 @@
-/* Delete this style if the root/body has a max-width */
-
 .CategoriesPage {
+  /* Delete this style if the root/body has a max-width */
   max-width: 1600px;
+
+  display: flex;
+  flex-direction: column;
+  div ul {
+    width: 100%;
+  }
 }

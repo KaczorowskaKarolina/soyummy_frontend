@@ -2,9 +2,9 @@ import { CategoryOrganism } from '../Organisms/categoryOrganisms/CategoryOrganis
 
 const CategoryTemplate = ({ titles, name }) => {
   return (
-    <div>
+    <>
       <CategoryOrganism titles={titles} name={name} />
-    </div>
+    </>
   );
 };
 

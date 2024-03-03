@@ -1,9 +1,9 @@
 import { nanoid } from 'nanoid';
 import { useMediaQuery } from '@mui/material';
 
+import { CategoryAtom } from '../Atoms/CategoryAtom.jsx';
 import { HomeAtomButton } from '../Atoms/HomeAtomButton.jsx';
 import { HomeAtomLinkButton } from '../Atoms/HomeAtomLinkButton.jsx';
-import { CategoryAtom } from '../../categories/components/Atoms/categoryAtoms/CategoryAtom.jsx';
 import { RecipeOrganism } from '../../categories/components/Organisms/recipeOrganisms/RecipeOrganism.jsx';
 
 import css from './HomeOrganism.module.css';

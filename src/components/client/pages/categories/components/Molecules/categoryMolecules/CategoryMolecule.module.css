@@ -3,7 +3,6 @@
   text-align: center;
   position: relative;
   cursor: pointer;
-
   a {
     font-size: 0.87em;
     color: var(--catNavText);

@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   height: max-content;
+  gap: 1.75rem;
   @media screen and (min-width: 30em) {
     flex-direction: row;
     flex-wrap: wrap;
