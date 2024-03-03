@@ -1,6 +1,6 @@
 import {
   persistStore,
-  // persistReducer,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -11,7 +11,7 @@ import {
 import storage from 'redux-persist/lib/storage/index.js';
 import { configureStore } from '@reduxjs/toolkit';
 
-// import { authReducer } from './auth/slice.js';
+import { authReducer } from './auth/slice.js';
 import { recipesReducer } from './recipes/slice.js';
 import { categoriesReducer } from './categories/slice.js';
 import { shoppingListReducer } from './shopping/slice.js';
@@ -25,7 +25,7 @@ const authPersistConfig = {
 
 const store = configureStore({
   reducer: {
-    // auth: persistReducer(authPersistConfig, authReducer),
+    auth: persistReducer(authPersistConfig, authReducer),
     recipes: recipesReducer,
     categories: categoriesReducer,
     ingredients: ingredientsReducer,
