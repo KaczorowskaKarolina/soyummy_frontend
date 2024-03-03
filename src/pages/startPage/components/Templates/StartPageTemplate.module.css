@@ -1,0 +1,24 @@
+.StartPageTemplate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+
+  background-image: url('../../../../images/pages/startPage/start-page-phone.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .StartPageTemplate {
+    background-image: url('../../../../images/pages/startPage/start-page-tablet.png');
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .StartPageTemplate {
+    background-image: url('../../../../images/pages/startPage/start-page-desktop.png');
+  }
+}
