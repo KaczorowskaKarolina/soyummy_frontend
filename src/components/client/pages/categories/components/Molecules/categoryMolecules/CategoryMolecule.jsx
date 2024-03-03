@@ -10,10 +10,9 @@ const CategoryMolecule = ({ title }) => {
   const [isActiveButton, setIsActiveButton] = useState(false);
   useEffect(() => {
     if (categoryName === title) {
-      console.log('here we are');
       setIsActiveButton(true);
     }
-  }, []);
+  }, [categoryName, title]);
 
   return (
     <li className={css.categoryMolecule} key={title}>

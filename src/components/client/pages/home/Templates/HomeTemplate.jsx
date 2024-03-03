@@ -1,4 +1,3 @@
-// import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { HomeOrganism } from '../Organisms/HomeOrganism';

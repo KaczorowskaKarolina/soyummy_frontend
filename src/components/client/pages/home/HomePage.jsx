@@ -1,7 +1,7 @@
 // import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
-import { HomeTemplate } from './Templates/HomeTemplate';
+// import { HomeTemplate } from './Templates/HomeTemplate';
 // import { fetchRecipes } from 'client/redux/recipes/operations';
 // import {
 //   changeQuery,
@@ -64,36 +64,4 @@ import { HomeTemplate } from './Templates/HomeTemplate';
 //     );
 //   };
 
-//Home page function for tests. TO DELETE!!
-
-import allRecipes from './recipes.json';
-import allCategories from './categoriesList.json';
-
-const HomePage = () => {
-  const [recipesListByCategory, setRecipesListByCategory] = useState([]);
-  let recipesByCategory = [];
-  useEffect(() => {
-    allCategories.map(category =>
-      recipesByCategory.push({
-        title: category.title,
-        recipes: [],
-      })
-    );
-    allRecipes.map(recipe => {
-      const currentRecipe = recipe;
-      const category = recipe.category;
-      return recipesByCategory.map(recipe => {
-        if (recipe.title === category) {
-          recipe.recipes.push(currentRecipe);
-        }
-        return recipe;
-      });
-    });
-
-    setRecipesListByCategory(recipesByCategory);
-  }, []);
-
-  return <HomeTemplate recipesByCategory={recipesListByCategory} />;
-};
-
-export { HomePage };
+// export { HomePage };
