@@ -1,6 +1,11 @@
 .container {
   display: flex;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: transparent;
   padding-top: 18px;
 }
 
@@ -52,5 +57,29 @@
   .burgerMenu {
     width: 32px;
     height: 32px;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .container {
+    padding-top: 14px;
+  }
+
+  .box {
+    width: 1240px;
+  }
+
+  .burgerMenu {
+    display: none;
+  }
+
+  .switch {
+    display: flex;
+    width: 61px;
+    height: 27px;
+  }
+
+  .switch:hover {
+    cursor: pointer;
   }
 }
