@@ -1,0 +1,35 @@
+.footerTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: default;
+}
+
+.footerLogo {
+  display: flex;
+  width: 32px;
+  height: 32px;
+}
+
+.footerTitleText {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .footerTitle {
+    gap: 12px;
+  }
+
+  .footerLogo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .footerTitleText {
+    font-size: 1.8rem;
+  }
+}
