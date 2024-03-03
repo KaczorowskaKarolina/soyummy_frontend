@@ -9,8 +9,10 @@
   align-items: center;
   z-index: 1000;
   background-color: var(--elementBg);
+  background-image: url('../../../images/pages/navigationMenu/nav-menu-background-mobile.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
   width: 100vw;
-  height: 100%;
   padding-top: 18px;
   padding-bottom: 18px;
 }
@@ -47,6 +49,7 @@
 
 @media screen and (min-width: 768px) {
   .container {
+    background-image: url('../../../images/pages/navigationMenu/nav-menu-background-tablet.png');
     padding-bottom: 32px;
   }
 
