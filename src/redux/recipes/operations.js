@@ -48,7 +48,7 @@ const fetchOneRecipe = createAsyncThunk(
 );
 
 const fetchRecipesByQuery = createAsyncThunk(
-  'recipes/fetchByCategory',
+  'recipes/fetchByQuery',
   async (data, thunkAPI) => {
     try {
       const { query, page, limit } = data;
@@ -75,7 +75,7 @@ const fetchRecipesByCategory = createAsyncThunk(
 );
 
 const fetchRecipesByIngredient = createAsyncThunk(
-  'recipes/fetchByCategory',
+  'recipes/fetchByIngredient',
   async (ingredientId, thunkAPI) => {
     try {
       const response = await axios.get(`/recipes/ingredients/${ingredientId}`);
