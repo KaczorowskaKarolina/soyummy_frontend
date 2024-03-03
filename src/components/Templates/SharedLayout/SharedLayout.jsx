@@ -9,17 +9,18 @@ import { useState } from 'react';
 
 const SharedLayout = () => {
   const [menuState, setMenuState] = useState(false);
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState('Title');
+
+  /* default title will be an empty string */
 
   if (menuState) {
     return <Navigation closeMenu={setMenuState} />;
   }
   return (
-    <div className={css.container}>
+    <div className={css.layout}>
       <Header openMenu={setMenuState} />
-      <div className={css.titleBox}>
-        <h2 className={css.title}>{title}</h2>
-      </div>
+      <div className={css.titleBackground}></div>
+      <h2 className={css.title}>{title}</h2>
       <Outlet context={[setTitle]} />
       <Footer />
     </div>
