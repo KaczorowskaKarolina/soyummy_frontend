@@ -39,7 +39,7 @@ export const App = () => {
         {/* Below is a testing component that I've created to check how the loggin in and registration works. */}
         {/* Btw. this is how all the other croutes should look like! */}
         <Route
-          path="/registration"
+          path="/recipe"
           element={
             <PrivateRoute
               redirectTo="/soyummy_frontend"
