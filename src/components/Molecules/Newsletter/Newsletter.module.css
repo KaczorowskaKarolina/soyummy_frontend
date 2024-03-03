@@ -1,0 +1,50 @@
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
+.newsletterAddon {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .newsletter {
+    flex-basis: 100%;
+    margin-top: 50px;
+  }
+
+  .newsletterAddon {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .newsletter {
+    flex-basis: 0;
+    margin-top: 0;
+  }
+
+  .newsletterAddon {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 339px;
+    color: var(--footerText);
+    cursor: default;
+  }
+
+  .newsletterTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .newsletterText {
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin: 0;
+  }
+}
