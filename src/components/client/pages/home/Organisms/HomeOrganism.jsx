@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
-import { useMediaQuery } from '@mui/material';
 
 import { CategoryAtom } from '../Atoms/CategoryAtom.jsx';
+import { CheckMediaQuery } from '../helpers.jsx';
 import { HomeAtomButton } from '../Atoms/HomeAtomButton.jsx';
 import { HomeAtomLinkButton } from '../Atoms/HomeAtomLinkButton.jsx';
 import { RecipeOrganism } from '../../categories/components/Organisms/recipeOrganisms/RecipeOrganism.jsx';
@@ -38,21 +38,5 @@ const HomeOrganism = ({ recipesByCategory }) => {
     </ul>
   ));
 };
-
-function CheckMediaQuery() {
-  const matchesMobile = useMediaQuery('(min-width:20em)');
-  const matchesTablet = useMediaQuery('(min-width:30em)');
-  const matchesDesktop = useMediaQuery('(min-width:48em)');
-
-  if (matchesDesktop) {
-    return 4;
-  }
-  if (matchesTablet) {
-    return 2;
-  }
-  if (matchesMobile) {
-    return 1;
-  }
-}
 
 export { HomeOrganism };
