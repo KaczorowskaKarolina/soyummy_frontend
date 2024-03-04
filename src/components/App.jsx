@@ -19,25 +19,30 @@ export const App = () => {
       }}
     >
       <Routes>
-        <Route path="/soyummy_frontend" element={<StartPage />} />
+        <Route
+          path="/soyummy_frontend"
+          element={
+            <RestrictedRoute redirectTo="/recipe" component={<StartPage />} />
+          }
+        />
         <Route
           path="/signin"
           element={
-            <RestrictedRoute redirectTo="/recipes" component={<SignIn />} />
+            <RestrictedRoute redirectTo="/recipe" component={<SignIn />} />
           }
         />
         <Route
           path="/registration"
           element={
             <RestrictedRoute
-              redirectTo="/recipes"
+              redirectTo="/recipe"
               component={<Registration />}
             />
           }
         />
 
         {/* Below is a testing component that I've created to check how the loggin in and registration works. */}
-        {/* Btw. this is how all the other croutes should look like! */}
+        {/* Btw. this is how all the other routes should look like! */}
         <Route
           path="/recipe"
           element={
@@ -46,11 +51,11 @@ export const App = () => {
               component={
                 <div>
                   Testing of an app in progress. Please stay allert and follow
-                  as on facebook, instagram, snapchat, linkedin, tiktok,
+                  us on facebook, instagram, snapchat, linkedin, tiktok,
                   nasza-klasa or read the newspapers like Super Express or The
                   Times to be updated and to know about newest realeses and
                   functions of our app. Thank you for beeing patient, it means
-                  nothing to us. Sincerly, group 1 from NYB.
+                  nothing to us. Sincerly, group 1 from NYB (Not Your Businnes).
                 </div>
               }
             />
