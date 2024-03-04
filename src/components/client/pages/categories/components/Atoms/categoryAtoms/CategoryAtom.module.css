@@ -11,15 +11,6 @@
   @media screen and (min-width: 48em) {
     margin-bottom: 3.1rem;
   }
-  &::after {
-    content: '';
-    position: absolute;
-    width: 600%;
-    height: 0.05em;
-    bottom: -34px;
-    left: 0;
-    background-color: var(--catNavText);
-  }
 }
 
 .CategoryNameAtomActive {
@@ -28,9 +19,10 @@
     content: '';
     position: absolute;
     width: 100%;
-    height: 0.2rem;
+    height: 0.5rem;
     bottom: -35px;
     left: 0;
     background-color: var(--accent);
+    border-radius: 5px;
   }
 }
