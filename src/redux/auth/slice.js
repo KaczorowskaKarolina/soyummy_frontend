@@ -19,7 +19,11 @@ const isRejectAction = action => {
 };
 
 const isLoginOrSignupAction = action => {
-  return action.type.endsWith('/signup') || action.type.endsWith('/login');
+  return (
+    (action.type.startsWith('auth/register') ||
+      action.type.startsWith('auth/login')) &&
+    action.type.endsWith('/fulfilled')
+  );
 };
 
 const handleLogin = (state, action) => {
