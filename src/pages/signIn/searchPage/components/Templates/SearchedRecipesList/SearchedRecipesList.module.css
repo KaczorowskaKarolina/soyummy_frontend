@@ -1,0 +1,106 @@
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.image {
+  width: 208px;
+  height: 133px;
+  top: 353px;
+  left: 84px;
+  border-radius: 8px;
+}
+.imageText {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: -0.02em;
+}
+.searchedRecipesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  list-style: none;
+}
+.recipeImageWithText {
+  width: 343px;
+  height: 323px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.recipeName {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  width: 90%;
+  background-color: var(--primaryColor);
+  border-radius: 8px;
+  color: var(--secondaryColor);
+  padding: 5px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .image {
+    background-image: url('../../../../../../images/pages/searchError/basket-with-vegetables/kisspng-vegetable-fruit-basket-mobile@1x.png');
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .image {
+    width: 350px;
+    height: 225px;
+    top: 384px;
+    left: 209px;
+    background-image: url('../../../../../../images/pages/searchError/basket-with-vegetables/kisspng-vegetable-fruit-basket-tablet@1x.png');
+  }
+  .imageText {
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+  }
+}
+@media (min-width: 1280px) {
+  .image {
+    width: 350px;
+    height: 225px;
+    top: 454px;
+    left: 545px;
+
+    background-image: url('../../../../../../images/pages/searchError/basket-with-vegetables/kisspng-vegetable-fruit-basket-desktop@1x.png');
+  }
+  .imageText {
+    font-size: 24px;
+
+    line-height: 24px;
+    letter-spacing: -0.02em;
+  }
+  .recipeImageWithText {
+    width: 300px;
+    height: 323px;
+  }
+  .searchedRecipesList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+}
+.imageText.darkTheme {
+  color: var(--signInUpText);
+}
+.recipeName.darkTheme {
+  background-color: var(--favoritesBgDark);
+  color: var(--signInUpText);
+}
