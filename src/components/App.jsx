@@ -21,7 +21,7 @@ const App = () => {
         <Route path="/registration" element={<Registration />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/" element={<SharedLayout />}> */}
-        <Route index element={<HomePage />} />
+        <Route path="/main" element={<HomePage />} />
         <Route path="/categories/:categoryName" element={<CategoriesPage />} />
         {/* <Route path="/add" element={<AddRecipesPage />} />
           <Route path="/my" element={<MyRecipesPage />} />
