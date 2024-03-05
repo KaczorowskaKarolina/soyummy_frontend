@@ -1,10 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { StartPage } from '../pages/startPage/StartPage.jsx';
-import { SignIn } from '../pages/signIn/SignIn.jsx';
-import { Registration } from '../pages/registration/Registration.jsx';
+// import { SignIn } from '../pages/signIn/SignIn.jsx';
+import { HomePage } from './client/pages/home/HomePage.jsx';
+// import { StartPage } from '../pages/startPage/StartPage.jsx';
+// import { Registration } from '../pages/registration/Registration.jsx';
+import { CategoriesPage } from './client/pages/categories/CategoriesPage.jsx';
 
-export const App = () => {
+const App = () => {
   return (
     <div
       style={{
