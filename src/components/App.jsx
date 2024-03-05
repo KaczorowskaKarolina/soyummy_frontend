@@ -6,9 +6,21 @@ import { RestrictedRoute } from './Organisms/RestrictedRoute/RestrictedRoute.jsx
 import { StartPage } from '../pages/startPage/StartPage.jsx';
 import { SignIn } from '../pages/signIn/SignIn.jsx';
 import { Registration } from '../pages/registration/Registration.jsx';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { refresh } from '../redux/auth/operations.js';
+import { useAuth } from '../hooks/index.js';
 
 export const App = () => {
-  return (
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refresh());
+  }, [dispatch]);
+  return isRefreshing ? (
+    <div>Refreshing...</div>
+  ) : (
     <div
       style={{
         display: 'flex',
