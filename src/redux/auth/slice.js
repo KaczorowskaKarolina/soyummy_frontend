@@ -28,7 +28,7 @@ const isLoginOrSignupAction = action => {
 
 const handleLogin = (state, action) => {
   state.user = action.payload.user;
-  action.payload.refreshToken && (state.token = action.payload.refreshToken);
+  action.payload.accessToken && (state.token = action.payload.accessToken);
   action.payload.confirmToken && (state.token = action.payload.confirmToken);
   state.isLoggedIn = true;
   state.isRefreshing = false;
