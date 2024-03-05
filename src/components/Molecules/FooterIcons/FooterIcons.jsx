@@ -1,6 +1,6 @@
 import css from './FooterIcons.module.css';
 
-import { FooterIcon } from 'components/Atoms/FooterIcon/FooterIcon.jsx';
+import { FooterIcon } from '../../Atoms/FooterIcon/FooterIcon.jsx';
 
 const FooterIcons = () => {
   return (

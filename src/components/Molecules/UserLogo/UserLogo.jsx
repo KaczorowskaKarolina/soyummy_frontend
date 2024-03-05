@@ -1,6 +1,6 @@
 import css from './UserLogo.module.css';
 
-import { Avatar } from 'components/Atoms/Avatar/Avatar.jsx';
+import { Avatar } from '../../Atoms/Avatar/Avatar.jsx';
 
 const UserLogo = () => {
   return (

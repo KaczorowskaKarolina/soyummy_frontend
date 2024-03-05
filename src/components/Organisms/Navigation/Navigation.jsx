@@ -4,7 +4,7 @@ import { ReactComponent as LogoIcon } from '../../../images/icons/logo-header-ic
 import { ReactComponent as CloseIcon } from '../../../images/icons/close-icon.svg';
 import { ReactComponent as Switch } from '../../../images/icons/switch-light-icon.svg';
 
-import { Navbar } from 'components/Molecules/Navbar/Navbar.jsx';
+import { Navbar } from '../../Molecules/Navbar/Navbar.jsx';
 
 import { Link } from 'react-router-dom';
 

@@ -1,7 +1,7 @@
 import css from './Navbar.module.css';
 import links from './links.json';
 
-import { NavigationLink } from 'components/Atoms/NavigationLink/NavigationLink.jsx';
+import { NavigationLink } from '../../Atoms/NavigationLink/NavigationLink.jsx';
 
 const Navbar = () => {
   return (

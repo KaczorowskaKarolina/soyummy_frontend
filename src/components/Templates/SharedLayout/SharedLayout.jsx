@@ -1,8 +1,8 @@
 import css from './SharedLayout.module.css';
 
-import { Header } from 'components/Organisms/Header/Header.jsx';
-import { Footer } from 'components/Organisms/Footer/Footer.jsx';
-import { Navigation } from 'components/Organisms/Navigation/Navigation.jsx';
+import { Header } from '../../Organisms/Header/Header.jsx';
+import { Footer } from '../../Organisms/Footer/Footer.jsx';
+import { Navigation } from '../../Organisms/Navigation/Navigation.jsx';
 
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';

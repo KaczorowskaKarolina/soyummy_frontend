@@ -4,13 +4,14 @@ import { ReactComponent as HeaderLogo } from '../../../images/icons/logo-header-
 import { ReactComponent as BurgerMenu } from '../../../images/icons/burger-icon.svg';
 import { ReactComponent as Switch } from '../../../images/icons/switch-light-icon.svg';
 
-import { Navbar } from 'components/Molecules/Navbar/Navbar.jsx';
+import { Navbar } from '../../Molecules/Navbar/Navbar.jsx';
+import { UserLogo } from '../../Molecules/UserLogo/UserLogo.jsx';
+import { Navigation } from '../Navigation/Navigation';
 
 import { Link } from 'react-router-dom';
-import { UserLogo } from 'components/Molecules/UserLogo/UserLogo.jsx';
-import { CheckMediaQuery } from './helpers.js';
 import { useState } from 'react';
-import { Navigation } from '../Navigation/Navigation';
+
+import { CheckMediaQuery } from './helpers.js';
 
 const Header = ({ openMenu }) => {
   const [nav, setNav] = useState(false);

@@ -1,7 +1,7 @@
 import css from './NewsletterForm.module.css';
 
-import { FormInput } from 'components/Atoms/FormInput/FormInput.jsx';
-import { RectangleButton } from 'components/Atoms/RectangleButton/RectangleButton.jsx';
+import { FormInput } from '../../Atoms/FormInput/FormInput.jsx';
+import { RectangleButton } from '../../Atoms/RectangleButton/RectangleButton.jsx';
 
 const NewsletterForm = () => {
   return (
