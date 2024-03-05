@@ -8,27 +8,21 @@ import categoryPageCss from '../../categories/components/Templates/RecipeTemplat
 
 const HomeMolecule = ({ recipeByCategory }) => {
   const countOfElement = CheckMediaQuery();
-  return (
-    <ul className={categoryPageCss.RecipeTemplate}>
-      {recipeByCategory.recipes.map((recipe, index) => {
-        for (let i = 0; i < countOfElement; i++) {
-          if (index < countOfElement) {
-            const id = nanoid();
-            const { thumb, title: recipeTitle } = recipe;
-            return (
-              <RecipeOrganism
-                className={css.HomeOrganismButton}
-                key={id}
-                imageSource={thumb}
-                title={recipeTitle}
-              />
-            );
-          }
-        }
-        return null;
-      })}
-    </ul>
-  );
+  const items = recipeByCategory.recipes
+    .slice(0, countOfElement)
+    .map(recipe => {
+      const id = nanoid();
+      const { thumb, title } = recipe;
+      return (
+        <RecipeOrganism
+          className={css.HomeOrganismButton}
+          key={id}
+          imageSource={thumb}
+          title={title}
+        />
+      );
+    });
+  return <ul className={categoryPageCss.RecipeTemplate}>{items}</ul>;
 };
 
 export { HomeMolecule };
