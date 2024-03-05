@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { HomePage } from './client/pages/home/HomePage';
-import { CategoriesPage } from './client/pages/categories/CategoriesPage';
-/* import your page component here and uncomment appropriate route below */
+import { StartPage } from '../pages/startPage/StartPage.jsx';
+import { SignIn } from '../pages/signIn/SignIn.jsx';
+import { Registration } from '../pages/registration/Registration.jsx';
 
-const App = () => {
+export const App = () => {
   return (
     <div
       style={{
@@ -15,7 +15,6 @@ const App = () => {
         color: '#010101',
       }}
     >
-      {/* <HomePage /> */}
       <Routes>
         {/* <Route path="/soyummy_frontend" element={<StartPage />} />
         <Route path="/registration" element={<Registration />} />
