@@ -1,9 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-  changeQuery,
-  fetchAllCategories,
-  fetchCategories,
-} from './operations.js';
+import { fetchAllCategories } from './operations.js';
 
 const categoriesSlice = createSlice({
   name: 'categories',
@@ -16,40 +12,14 @@ const categoriesSlice = createSlice({
   },
   extraReducers: builder => {
     builder
-      .addCase(fetchCategories.pending, (state, action) => {
-        state.error = null;
-        state.isLoading = true;
-      })
-      .addCase(fetchCategories.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.items.push(...action.payload);
-      })
-      .addCase(fetchCategories.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
-      .addCase(changeQuery.pending, (state, action) => {
-        state.isLoading = true;
-        state.error = null;
-      })
-      .addCase(changeQuery.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.query = state.query + action.payload;
-      })
-      .addCase(changeQuery.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
-      .addCase(fetchAllCategories.pending, (state, action) => {
-        state.isLoading = true;
-        state.error = null;
-      })
       .addCase(fetchAllCategories.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.query = action.payload;
+        state.query = action.payload.categories;
+      })
+      .addCase(fetchAllCategories.pending, state => {
+        state.isLoading = true;
+        state.error = null;
       })
       .addCase(fetchAllCategories.rejected, (state, action) => {
         state.isLoading = false;
