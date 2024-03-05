@@ -8,12 +8,13 @@ import { Navbar } from 'components/Molecules/Navbar/Navbar.jsx';
 
 import { Link } from 'react-router-dom';
 import { UserLogo } from 'components/Molecules/UserLogo/UserLogo.jsx';
+import { CheckMediaQuery } from './helpers.js';
 import { useState } from 'react';
 import { Navigation } from '../Navigation/Navigation';
 
 const Header = ({ openMenu }) => {
   const [nav, setNav] = useState(false);
-  let width = window.innerWidth;
+  const isDesktop = CheckMediaQuery();
 
   return (
     <>
@@ -22,7 +23,7 @@ const Header = ({ openMenu }) => {
           <Link to="/" className={css.logo}>
             <HeaderLogo />
           </Link>
-          {width < 1240 ? null : <Navbar />}
+          {isDesktop ? <Navbar /> : null}
           <div className={css.rightContainer}>
             <UserLogo />
             <div
