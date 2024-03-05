@@ -1,0 +1,23 @@
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .footerLinks {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .footerLinks {
+    gap: 24px;
+    margin-right: 20px;
+  }
+}

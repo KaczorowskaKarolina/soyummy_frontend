@@ -1,0 +1,28 @@
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  gap: 32px;
+  padding-inline-start: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    gap: 40px;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .list {
+    flex-direction: row;
+    gap: 30px;
+    margin: 0;
+  }
+}

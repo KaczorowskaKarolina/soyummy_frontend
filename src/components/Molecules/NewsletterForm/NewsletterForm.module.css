@@ -1,0 +1,58 @@
+.newsletterForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.newsletterFormInput {
+  width: 204px;
+  height: 38px;
+}
+
+.newsletterFormButton {
+  display: flex;
+  width: 204px;
+  height: 38px;
+}
+
+@media screen and (min-width: 768px) {
+  .newsletterForm {
+    width: 458px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .newsletterFormInput {
+    display: flex;
+    width: 228px;
+    height: 50px;
+  }
+
+  .newsletterFormButton {
+    display: flex;
+    width: 187px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .newsletterForm {
+    width: 338px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .newsletterFormInput {
+    display: flex;
+    width: 296px;
+    height: 59px;
+  }
+
+  .newsletterFormButton {
+    display: flex;
+    width: 338px;
+    height: 59px;
+  }
+}

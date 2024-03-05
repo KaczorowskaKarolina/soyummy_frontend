@@ -1,0 +1,57 @@
+.link {
+  text-decoration: none;
+  color: var(--mainTitle);
+  font-size: 18px;
+  font-weight: var(--font-medium);
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.icon {
+  margin-right: 8px;
+  width: 1em;
+  height: 1em;
+}
+
+.title {
+  margin: 0;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: var(--hoverIcon);
+}
+
+.active {
+  color: var(--hoverIcon);
+}
+
+@media screen and (min-width: 768px) {
+  .link {
+    font-size: 24px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .link {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--navText);
+  }
+
+  .icon {
+    margin-right: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  .title {
+    display: none;
+  }
+}
