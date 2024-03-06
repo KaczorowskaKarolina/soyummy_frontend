@@ -97,7 +97,7 @@ const addRecipe = createAsyncThunk(
       formData.append('image', blobedImage);
       formData.append('recipe', blobedInfo);
       const response = await axios.post('/user/ownRecipes', formData);
-      return response.data.data.file;
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -108,8 +108,8 @@ const deleteRecipe = createAsyncThunk(
   'recipe/deleteRecipe',
   async (recipeId, thunkAPI) => {
     try {
-      await axios.delete(`/user/ownRecipes/${recipeId}`);
-      return recipeId;
+      const response = await axios.delete(`/user/ownRecipes/${recipeId}`);
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -132,8 +132,8 @@ const deleteFromFavorites = createAsyncThunk(
   'recipe/deleteFromFavorites',
   async (recipeId, thunkAPI) => {
     try {
-      await axios.delete(`/recipe/favorites/${recipeId}`);
-      return recipeId;
+      const response = await axios.delete(`/recipe/favorites/${recipeId}`);
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
