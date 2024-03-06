@@ -89,10 +89,12 @@ const addRecipe = createAsyncThunk(
     try {
       const formData = new FormData();
       const blobedInfo = new Blob([recipeInfo], {
+        type: 'application/json',
+      });
+      const blobedImage = new Blob([recipeImage], {
         type: 'multipart/form-data',
       });
-      const blobedImage = new Blob([recipeImage], { type: 'application/json' });
-      formData.append('recipeImage', blobedImage);
+      formData.append('image', blobedImage);
       formData.append('recipe', blobedInfo);
       const response = await axios.post('/user/ownRecipes', formData);
       return response.data.data.file;
