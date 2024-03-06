@@ -1,14 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-  addRecipe,
-  fetchRecipes,
-  fetchOneRecipe,
-  fetchFavorites,
-  deleteRecipe,
-  fetchRecipesByCategory,
-  fetchRecipesByIngredient,
-  deleteFromFavorites,
-} from './operations.js';
+import { addRecipe, deleteRecipe, deleteFromFavorites } from './operations.js';
+
+const clearLoadingError = state => {
+  state.isLoading = false;
+  state.error = null;
+};
 
 const handlePending = state => {
   state.isLoading = true;
@@ -19,13 +15,18 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
-const clearLoadingError = state => {
-  state.isLoading = false;
-  state.error = null;
+const handleFulfilled = (state, action) => {
+  clearLoadingError(state);
+  action.payload.recipes && (state.items = action.payload.recipes);
+  action.payload.pageAmount && (state.pageAmount = action.payload.pageAmount);
 };
 
 const isPendingAction = action => {
   return action.type.endsWith('/pending');
+};
+
+const isFulfilledAction = action => {
+  return action.type.endsWith('/fulfilled');
 };
 
 const isRejectAction = action => {
@@ -43,39 +44,14 @@ const recipesSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
-      .addCase(fetchRecipes.fulfilled, (state, action) => {
-        clearLoadingError(state);
-        state.items = action.payload.recipes;
-        state.pageAmount = action.payload.pageAmount;
-      })
-      .addCase(fetchOneRecipe.fulfilled, (state, action) => {
-        clearLoadingError(state);
-        state.items = action.payload.recipes;
-        state.pageAmount = 0;
-      })
-      .addCase(fetchRecipesByCategory.fulfilled, (state, action) => {
-        clearLoadingError(state);
-        state.items = action.payload.recipes;
-        state.pageAmount = action.payload.pageAmount;
-      })
-      .addCase(fetchRecipesByIngredient.fulfilled, (state, action) => {
-        clearLoadingError(state);
-        state.items = action.payload.recipes;
-        state.pageAmount = action.payload.pageAmount;
-      })
-      .addCase(fetchFavorites.fulfilled, (state, action) => {
-        clearLoadingError(state);
-        state.items = action.payload.recipes;
-        state.pageAmount = action.payload.pageAmount;
-      })
       .addCase(addRecipe.fulfilled, (state, action) => {
         clearLoadingError(state);
-        state.items.push(action.payload);
+        state.items.push(action.payload.recipes);
       })
       .addCase(deleteRecipe.fulfilled, (state, action) => {
         clearLoadingError(state);
         const index = state.items.findIndex(
-          contact => contact.id === action.payload
+          recipe => recipe._id === action.payload
         );
         state.items.splice(index, 1);
       })
@@ -86,6 +62,7 @@ const recipesSlice = createSlice({
         );
         state.items.splice(index, 1);
       })
+      .addMatcher(isFulfilledAction, handleFulfilled)
       .addMatcher(isPendingAction, handlePending)
       .addMatcher(isRejectAction, handleRejected);
   },
