@@ -7,8 +7,6 @@ const categoriesSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
-    query: 4,
-    skip: 0,
   },
   extraReducers: builder => {
     builder
