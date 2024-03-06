@@ -34,16 +34,16 @@ const shoppingList = createSlice({
     builder
       .addCase(fetchShoppingList.fulfilled, (state, action) => {
         clearLoadingError(state);
-        state.items = action.payload;
+        state.items = action.payload.shoppingList;
       })
       .addCase(addProduct.fulfilled, (state, action) => {
         clearLoadingError(state);
-        state.items.push(action.payload);
+        state.items.push(action.payload.newProduct);
       })
       .addCase(deleteProduct.fulfilled, (state, action) => {
         clearLoadingError(state);
         const index = state.items.findIndex(
-          contact => contact.id === action.payload
+          item => item.id === action.payload.idProduct
         );
         state.items.splice(index, 1);
       })
