@@ -106,7 +106,19 @@ const deleteRecipe = createAsyncThunk(
   'recipe/deleteRecipe',
   async (recipeId, thunkAPI) => {
     try {
-      const response = await axios.delete(`/user/ownRecipes/${recipeId}`);
+      await axios.delete(`/user/ownRecipes/${recipeId}`);
+      return recipeId;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+const addToFavorites = createAsyncThunk(
+  'recipe/addToFavorites',
+  async (recipeId, thunkAPI) => {
+    try {
+      const response = await axios.post(`/recipe/favorites/${recipeId}`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -118,8 +130,8 @@ const deleteFromFavorites = createAsyncThunk(
   'recipe/deleteFromFavorites',
   async (recipeId, thunkAPI) => {
     try {
-      const response = await axios.delete(`/recipe/favorites/${recipeId}`);
-      return response.data;
+      await axios.delete(`/recipe/favorites/${recipeId}`);
+      return recipeId;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -135,5 +147,6 @@ export {
   fetchRecipeById,
   fetchFavorites,
   fetchRecipesByIngredient,
+  addToFavorites,
   deleteFromFavorites,
 };
