@@ -23,5 +23,5 @@ code {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--placeholderText);
-  border-radius: 0.37rem;
+  border-radius: 6px;
 }

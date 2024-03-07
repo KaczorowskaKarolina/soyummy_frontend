@@ -1,8 +1,8 @@
 .HomeAtomButtonLoadMore {
   padding: 0.75rem 1.5rem;
   color: var(--secondaryColor);
-  border-radius: 1.5rem 2.75rem;
-  border: 1px solid var(--accent);
+  border-radius: 24px 44px;
+  border: 0.06rem solid var(--accent);
   background-color: transparent;
   transition: ease-in-out 0.25s;
   cursor: pointer;

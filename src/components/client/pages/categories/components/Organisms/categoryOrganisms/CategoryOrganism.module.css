@@ -16,8 +16,8 @@
   hr {
     position: relative;
     border-color: var(--shoppingListBorder);
-    margin-top: -60px;
+    margin-top: -3.75rem;
     width: 112%;
-    border-width: 1px;
+    border-width: 0.06rem;
   }
 }
