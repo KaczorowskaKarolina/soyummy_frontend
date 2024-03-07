@@ -1,0 +1,21 @@
+.RecipeOrganism {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  max-width: 21em;
+  @media screen and (min-width: 30em) {
+    flex-basis: calc((100% - 2em) / 2);
+  }
+  @media screen and (min-width: 48em) {
+    flex-basis: calc((100% - 3em) / 4);
+  }
+  &:hover p {
+    transform: scale(1.05);
+    transition: transform ease-in-out 0.25s;
+  }
+  :hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform ease-in-out 0.25s;
+  }
+}

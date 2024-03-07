@@ -1,0 +1,23 @@
+.CategoryOrganism {
+  padding-inline-start: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  list-style: none;
+  overflow: auto;
+  white-space: nowrap;
+  overflow-y: hidden;
+  width: 100%;
+
+  li {
+    display: inline-block;
+  }
+  hr {
+    position: relative;
+    border-color: var(--shoppingListBorder);
+    margin-top: -3.75rem;
+    width: 112%;
+    border-width: 0.06rem;
+  }
+}

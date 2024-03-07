@@ -1,0 +1,33 @@
+.categoryMolecule {
+  height: 3.5em;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  a {
+    font-size: 0.87rem;
+    color: var(--catNavText);
+    text-decoration: none;
+    position: relative;
+    transition: ease-in-out 0.25s;
+    &:hover {
+      color: var(--accent);
+      &::after {
+        content: '';
+        height: 0.5rem;
+        bottom: -2.5rem;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        background-color: var(--accent);
+        border-radius: 5px;
+      }
+    }
+    @media screen and (min-width: 30em) {
+      font-size: 1.12rem;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: 1.8em;
+  }
+}

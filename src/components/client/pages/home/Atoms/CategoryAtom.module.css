@@ -1,0 +1,14 @@
+.CategoryNameAtom {
+  font-size: 1.75em;
+  font-family: var(--font-family);
+  text-decoration: none;
+  color: var(--secondaryColor);
+  margin-bottom: 2rem;
+  @media screen and (min-width: 30em) {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+  @media screen and (min-width: 48em) {
+    margin-bottom: 3.1rem;
+  }
+}
