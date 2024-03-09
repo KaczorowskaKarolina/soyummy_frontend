@@ -5,30 +5,30 @@
   flex-direction: column;
 }
 .image {
-  width: 208px;
-  height: 133px;
-  top: 353px;
-  left: 84px;
+  width: 13rem;
+  height: 8.3125rem;
+  top: 22.1875rem;
+  left: 5.25rem;
   border-radius: 8px;
 }
 .imageText {
   font-family: Poppins;
-  font-size: 14px;
+  font-size: 1.5rem;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 1.5rem;
   letter-spacing: -0.02em;
 }
 .searchedRecipesList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 1.25rem;
   align-items: center;
   list-style: none;
 }
 .recipeImageWithText {
-  width: 343px;
-  height: 323px;
+  width: 21.4375rem;
+  height: 20.1875rem;
   border-radius: 8px;
   background-size: cover;
   background-position: center;
@@ -37,15 +37,15 @@
 
 .recipeName {
   position: absolute;
-  bottom: 20px;
-  left: 10px;
+  bottom: 1.25rem;
+  left: 0.625em;
   width: 90%;
   background-color: var(--primaryColor);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   color: var(--secondaryColor);
-  padding: 5px;
+  padding: 0.3125rem;
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
 }
 .pagination {
@@ -60,46 +60,32 @@
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .image {
-    width: 350px;
-    height: 225px;
-    top: 384px;
-    left: 209px;
+    width: 21.875rem;
+    height: 14.0625rem;
+    top: 24rem;
+    left: 13.0625rem;
     background-image: url('../../../../../../images/pages/searchError/basket-with-vegetables/kisspng-vegetable-fruit-basket-tablet@1x.png');
   }
   .imageText {
-    font-size: 24px;
-    line-height: 24px;
-    letter-spacing: -0.02em;
-  }
-}
-@media (min-width: 1280px) {
-  .image {
-    width: 350px;
-    height: 225px;
-    top: 454px;
-    left: 545px;
-
-    background-image: url('../../../../../../images/pages/searchError/basket-with-vegetables/kisspng-vegetable-fruit-basket-desktop@1x.png');
-  }
-  .imageText {
-    font-size: 24px;
-
-    line-height: 24px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
     letter-spacing: -0.02em;
   }
   .recipeImageWithText {
-    width: 300px;
-    height: 323px;
+    width: 18.75rem;
+    height: 20.1875rem;
   }
   .searchedRecipesList {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 1.25rem;
   }
 }
+
 .imageText.darkTheme {
   color: var(--signInUpText);
 }
+
 .recipeName.darkTheme {
   background-color: var(--favoritesBgDark);
   color: var(--signInUpText);

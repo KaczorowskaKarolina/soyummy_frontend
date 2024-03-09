@@ -4,29 +4,28 @@ import styles from './SearchForm.module.css';
 
 //Future import { useTheme }? (Dark Theme) and styles in the code to be replaced
 
-
- const SearchForm = ({ onSearch }) => {
- // const { theme } = useTheme();
+const SearchForm = ({ onSearch }) => {
+  // const { theme } = useTheme();
   const [query, setQuery] = useState('');
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    onSearch(query);
+  const handleQueryChange = e => {
+    const queryValue = e.target.value;
+    setSearchParams({ query: queryValue });
   };
 
   return (
     <form
-    className={styles.searchForm}
+      className={styles.searchForm}
       //className={`${styles.searchForm} ${
-       // theme === 'dark' ? styles.darkTheme : ''
-     // }`}
+      // theme === 'dark' ? styles.darkTheme : ''
+      // }`}
       onSubmit={handleSubmit}
     >
       <input
-       className={styles.input}
-       // className={`${styles.input} ${
-         // theme === 'dark' ? styles.darkTheme : ''
-       // }`}
+        className={styles.input}
+        // className={`${styles.input} ${
+        // theme === 'dark' ? styles.darkTheme : ''
+        // }`}
         type="text"
         autoComplete="off"
         autoFocus
@@ -35,7 +34,7 @@ import styles from './SearchForm.module.css';
         placeholder="Search..."
         name="query"
         value={query}
-        onChange={e => setQuery(e.target.value)}
+        onChange={handleQueryChange}
       ></input>
       <button type="submit" className={styles.buttonSearch}>
         Search
@@ -43,6 +42,5 @@ import styles from './SearchForm.module.css';
     </form>
   );
 };
-
 
 export { SearchForm };

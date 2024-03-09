@@ -22,6 +22,28 @@ const SearchedRecipesList = ({ recipes, error }) => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = recipes.slice(indexOfFirstItem, indexOfLastItem);
 
+  const renderRecipes = currentItems.map((recipe, index) => (
+    <li key={index}>
+      <Link to={`/recipes/${recipe._id}`}>
+        <div className={styles.recipeItem}>
+          <div
+            className={styles.recipeImageWithText}
+            style={{ backgroundImage: `url(${recipe.thumb})` }}
+          >
+            <p
+              className={styles.recipeName}
+              //className={`${styles.recipeName} ${
+              // theme === 'dark' ? styles.darkTheme : ''
+              // }`}
+            >
+              {recipe.title}
+            </p>
+          </div>
+        </div>
+      </Link>
+    </li>
+  ));
+
   return (
     <div>
       {error ? (
@@ -38,29 +60,8 @@ const SearchedRecipesList = ({ recipes, error }) => {
         </div>
       ) : recipes && recipes.length > 0 ? (
         <>
-          <ul className={styles.searchedRecipesList}>
-            {currentItems.map((recipe, index) => (
-              <li key={index}>
-                <Link to={`/recipes/${recipe._id}`}>
-                  <div className={styles.recipeItem}>
-                    <div
-                      className={styles.recipeImageWithText}
-                      style={{ backgroundImage: `url(${recipe.thumb})` }}
-                    >
-                      <p
-                        className={styles.recipeName}
-                        //className={`${styles.recipeName} ${
-                        // theme === 'dark' ? styles.darkTheme : ''
-                        // }`}
-                      >
-                        {recipe.title}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <ul className={styles.searchedRecipesList}>{renderRecipes}</ul>
+
           <div className={styles.pagination}>
             <Pagination
               pageCount={Math.ceil(recipes.length / itemsPerPage)}
