@@ -1,0 +1,35 @@
+.searchTypeSelector {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchText {
+  font-weight: 500;
+  font-size: 0.75rem;
+  margin-right: 0.625rem;
+}
+
+.customSelect {
+  position: relative;
+  width: 9.125rem;
+  height: 2.125rem;
+  background-color: var(--activeBtnText);
+  border: none;
+  color: var(--secondary-color);
+  border-radius: 4px;
+}
+
+.customSelect.darkTheme {
+  background-color: transparent;
+  color: var(--activeBtn);
+  border: 0.0625rem solid #fafafa33;
+}
+
+.searchText.darkTheme {
+  color: var(--activeBtnText);
+}
+
+option.darkTheme {
+  background-color: var(--activeBtn);
+  color: var(--activeBtnText);
+}

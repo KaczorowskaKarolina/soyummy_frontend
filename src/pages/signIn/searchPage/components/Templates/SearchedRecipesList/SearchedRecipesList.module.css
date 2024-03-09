@@ -1,0 +1,92 @@
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.image {
+  width: 13rem;
+  height: 8.3125rem;
+  top: 22.1875rem;
+  left: 5.25rem;
+  border-radius: 8px;
+}
+.imageText {
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  letter-spacing: -0.02em;
+}
+.searchedRecipesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  align-items: center;
+  list-style: none;
+}
+.recipeImageWithText {
+  width: 21.4375rem;
+  height: 20.1875rem;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.recipeName {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 0.625em;
+  width: 90%;
+  background-color: var(--primaryColor);
+  border-radius: 0.5rem;
+  color: var(--secondaryColor);
+  padding: 0.3125rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .image {
+    background-image: url('../../../../../../images/pages/searchError/basket-with-vegetables/kisspng-vegetable-fruit-basket-mobile@1x.png');
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .image {
+    width: 21.875rem;
+    height: 14.0625rem;
+    top: 24rem;
+    left: 13.0625rem;
+    background-image: url('../../../../../../images/pages/searchError/basket-with-vegetables/kisspng-vegetable-fruit-basket-tablet@1x.png');
+  }
+  .imageText {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+  .recipeImageWithText {
+    width: 18.75rem;
+    height: 20.1875rem;
+  }
+  .searchedRecipesList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.imageText.darkTheme {
+  color: var(--signInUpText);
+}
+
+.recipeName.darkTheme {
+  background-color: var(--favoritesBgDark);
+  color: var(--signInUpText);
+}
