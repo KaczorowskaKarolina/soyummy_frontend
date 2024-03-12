@@ -45,7 +45,7 @@ const handleRejected = (state, action) => {
   state.token = null;
   state.isLoggedIn = false;
   state.isRefreshing = false;
-  state.error = action.payload;
+  state.error = action.payload || false;
 };
 
 const authSlice = createSlice({
@@ -53,13 +53,7 @@ const authSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(logout.fulfilled, state => {
-        state.user = { name: null, email: null };
-        state.token = null;
-        state.isLoggedIn = false;
-        state.isRefreshing = false;
-        state.error = false;
-      })
+      .addCase(logout.fulfilled, handleRejected)
       .addCase(refresh.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.isLoggedIn = true;
@@ -68,9 +62,7 @@ const authSlice = createSlice({
       })
       .addCase(deleteUser.fulfilled, handleRejected)
       .addCase(updateUser.fulfilled, (state, action) => {
-        action.payload.name && (state.user.name = action.payload.name);
-        action.payload.avatarUrl &&
-          (state.user.name = action.payload.avatarUrl);
+        state.user = action.payload.user;
         state.isLoggedIn = true;
         state.isRefreshing = false;
         state.error = false;

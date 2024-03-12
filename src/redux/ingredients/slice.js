@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchIngredients, fetchIngredientById } from './operations.js';
 
 const isPendingAction = action => {
   return action.type.endsWith('/pending');

@@ -48,22 +48,20 @@ const recipesSlice = createSlice({
         clearLoadingError(state);
         state.items.push(action.payload.recipes);
       })
-      // NOT SURE IF THE CODE BELOW IS NEEDED!
-      //
-      // .addCase(deleteRecipe.fulfilled, (state, action) => {
-      //   clearLoadingError(state);
-      //   const index = state.items.findIndex(
-      //     recipe => recipe._id === action.payload.recipeId
-      //   );
-      //   state.items.splice(index, 1);
-      // })
-      // .addCase(deleteFromFavorites.fulfilled, (state, action) => {
-      //   clearLoadingError(state);
-      //   const index = state.items.findIndex(
-      //     recipe => recipe._id === action.payload.recipeId
-      //   );
-      //   state.items.splice(index, 1);
-      // })
+      .addCase(deleteRecipe.fulfilled, (state, action) => {
+        clearLoadingError(state);
+        const index = state.items.findIndex(
+          recipe => recipe._id === action.payload.recipeId
+        );
+        index !== -1 && state.items.splice(index, 1);
+      })
+      .addCase(deleteFromFavorites.fulfilled, (state, action) => {
+        clearLoadingError(state);
+        const index = state.items.findIndex(
+          recipe => recipe._id === action.payload.recipeId
+        );
+        index !== -1 && state.items.splice(index, 1);
+      })
       .addMatcher(isFulfilledAction, handleFulfilled)
       .addMatcher(isPendingAction, handlePending)
       .addMatcher(isRejectAction, handleRejected);
