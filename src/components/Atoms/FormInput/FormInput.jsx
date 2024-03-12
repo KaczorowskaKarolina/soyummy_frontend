@@ -43,6 +43,7 @@ const FormInput = ({
       <input
         type={type}
         name={inputName}
+        id={inputName}
         placeholder={placeholder}
         // onChange={handleChange}
         required
