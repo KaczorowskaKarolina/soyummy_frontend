@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 
 import { PrivateRoute } from './Organisms/PrivateRoute/PrivateRoute.jsx';
 import { RestrictedRoute } from './Organisms/RestrictedRoute/RestrictedRoute.jsx';
@@ -52,6 +52,7 @@ export const App = () => {
             />
           }
         />
+        <Route path="/verifyEmail" element={<VerifiedEmail />} />
 
         {/* Below is a testing component that I've created to check how the loggin in and registration works. */}
         {/* Btw. this is how all the other routes should look like! */}
@@ -78,4 +79,26 @@ export const App = () => {
   );
 };
 
-// sth
+const VerifiedEmail = () => {
+  const queryParams = new URLSearchParams(window.location.search);
+  const data = JSON.parse(decodeURIComponent(queryParams.get('status')));
+  return (
+    <div>
+      {data === 200 && (
+        <p>
+          Your email has been sucesfully verified. You can now{' '}
+          <Link to={'/signin'}> log in</Link>
+        </p>
+      )}
+      {data === 400 && <p>Invalid token, please contact Customer Service.</p>}
+      {data === 404 && <p>User not found, please contact Customer Service.</p>}
+      {!data && <p>You shouldn't be here you little shit. Go away!!!!</p>}
+      {data === 500 && (
+        <p>You shouldn't be here you little shit. Go away!!!!</p>
+      )}
+      {data !== 200 && data !== 400 && data !== 404 && data !== 500 && (
+        <p>Something went wrong. Please contact our Costumer Service.</p>
+      )}
+    </div>
+  );
+};

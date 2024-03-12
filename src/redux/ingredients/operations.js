@@ -5,7 +5,7 @@ const fetchIngredients = createAsyncThunk(
   'ingredients/fetchAll',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('ingredient');
+      const response = await axios.get('recipes/ingredients/list');
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -14,10 +14,10 @@ const fetchIngredients = createAsyncThunk(
 );
 
 const fetchIngredientById = createAsyncThunk(
-  'ingredients/fetchAll',
+  'ingredients/fetchByIngredient',
   async (id, thunkAPI) => {
     try {
-      const response = await axios.get(`ingredient/${id}`);
+      const response = await axios.get(`recipes/ingredients/${id}`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

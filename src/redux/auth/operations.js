@@ -21,7 +21,7 @@ const register = createAsyncThunk(
   'auth/register',
   async (credentails, thunkAPI) => {
     try {
-      const response = await axios.post('user/', credentails);
+      const response = await axios.post('auth/register', credentails);
       setAuthHeader(response.data.confirmToken);
       return response.data;
     } catch (error) {
@@ -32,7 +32,7 @@ const register = createAsyncThunk(
 
 const login = createAsyncThunk('auth/login', async (credentails, thunkAPI) => {
   try {
-    const response = await axios.post('user/login', credentails);
+    const response = await axios.post('auth/login', credentails);
     setAuthHeader(response.data.refreshToken);
     return response.data;
   } catch (error) {
@@ -59,7 +59,7 @@ const refresh = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
 
   try {
     setAuthHeader(persistedToken);
-    const response = await axios.get('user/');
+    const response = await axios.get('auth/refresh');
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
@@ -68,7 +68,7 @@ const refresh = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
 
 const deleteUser = createAsyncThunk('auth/delete', async (_, thunkAPI) => {
   try {
-    await axios.delete('user/');
+    await axios.delete('auth/delete');
     clearAuthHeader();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
@@ -77,14 +77,18 @@ const deleteUser = createAsyncThunk('auth/delete', async (_, thunkAPI) => {
 
 const updateUser = createAsyncThunk(
   'auth/update',
-  async ({ avatar = '', name = '' }, thunkAPI) => {
+  async ({ avatar = '', info = '' }, thunkAPI) => {
     try {
-      const blob = avatar
-        ? new Blob([avatar], { type: 'multipart/form-data' })
-        : null;
-      const response = avatar
-        ? await axios.patch('users/avatar', new FormData('avatar', blob))
-        : await axios.patch('users/name', { name });
+      const formData = new FormData();
+      const blobedInfo = new Blob([info], {
+        type: 'application/json',
+      });
+      const blobedImage = new Blob([avatar], {
+        type: 'multipart/form-data',
+      });
+      formData.append('avatar', blobedImage);
+      formData.append('update', blobedInfo);
+      const response = await axios.put('user/edit', formData);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
